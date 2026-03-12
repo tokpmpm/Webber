@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="Twarovia icon">
+  <rect width="100" height="100" rx="50" fill="#0b0b0b"/>
+  <ellipse cx="50" cy="56" rx="30" ry="30" fill="#d6b04a"/>
+  <ellipse cx="60" cy="30" rx="18" ry="10" fill="#d6b04a" transform="rotate(-22 60 30)"/>
+  <g fill="#0b0b0b" transform="translate(58 58)">
+    <path d="M10 10c0 4-2 8-6 10-1-5 1-9 6-10z"/>
+    <path d="M10 10c4 0 8 2 10 6-5 1-9-1-10-6z"/>
+    <path d="M10 10c0-4 2-8 6-10 1 5-1 9-6 10z"/>
+    <path d="M10 10c-4 0-8-2-10-6 5-1 9 1 10 6z"/>
+    <circle cx="10" cy="10" r="3"/>
+  </g>
+</svg>
