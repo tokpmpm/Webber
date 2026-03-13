@@ -1,52 +1,76 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="zh-TW" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Webber Hsu - AI 自動化解決方案</title>
+    <title>Webber Hsu - AI 效率升級顧問</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Oswald:wght@400;600;700&display=swap"
         rel="stylesheet">
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Noto Sans TC', 'sans-serif'],
+                        display: ['Oswald', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#0a0a0a',
+                            light: '#f4f4f5',
+                            accent: '#00f0ff', // Electric Cyan
+                            accentDim: '#00a8b3'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
     <style>
         body {
-            font-family: 'Noto Sans TC', sans-serif;
-            background-color: #f1f5f9;
+            background-color: #e5e5e5;
             -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
         }
 
-        /* A4 Paper Simulation */
-        .a4-page {
-            width: 210mm;
-            min-height: 297mm;
-            margin: 20px auto;
-            background: white;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        /* Brutalist / Editorial Paper Sim */
+        .editorial-page {
+            width: 100%;
+            max-width: 1200px;
+            min-height: 100vh;
+            margin: 0 auto;
+            background: #ffffff;
             position: relative;
-            overflow: hidden;
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
         }
 
-        @media screen and (max-width: 768px) {
-            .a4-page {
-                width: 100%;
-                min-height: auto;
-                margin: 0;
-            }
+        .border-grid {
+            border: 1px solid #e5e7eb;
+        }
+
+        .border-grid-b {
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        /* Tech Glitch effect for hover */
+        .glitch-hover:hover {
+            box-shadow: 4px 4px 0px 0px #00f0ff;
+            transform: translate(-2px, -2px);
         }
 
         @media print {
             body {
                 background: none;
-                margin: 0;
             }
 
-            .a4-page {
-                margin: 0;
+            .editorial-page {
+                max-width: none;
                 box-shadow: none;
-                width: 100%;
-                height: auto;
             }
 
             .no-print {
@@ -56,318 +80,396 @@
     </style>
 </head>
 
-<body class="text-slate-700">
+<body class="text-brand-dark antialiased">
 
 
 
-    <div class="a4-page flex flex-col">
+    <div class="editorial-page flex flex-col">
 
-        <!-- Header Section: Tech & Professional -->
-        <header class="bg-slate-900 text-white pt-12 pb-10 px-10 relative overflow-hidden">
-            <!-- Decorative Elements -->
-            <div
-                class="absolute top-0 right-0 w-64 h-64 bg-cyan-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 -translate-y-1/2 translate-x-1/2">
-            </div>
-            <div
-                class="absolute bottom-0 left-0 w-48 h-48 bg-blue-600 rounded-full mix-blend-multiply filter blur-2xl opacity-20 translate-y-1/2 -translate-x-1/4">
+        <!-- 1. HERO SECTION: Brutalist Tech -->
+        <header
+            class="bg-brand-dark text-white min-h-[70vh] flex flex-col justify-center relative border-b-8 border-brand-accent">
+            <!-- Architectural Lines -->
+            <div class="absolute inset-0 opacity-10 pointer-events-none"
+                style="background-image: linear-gradient(#ffffff 1px, transparent 1px), linear-gradient(90deg, #ffffff 1px, transparent 1px); background-size: 40px 40px;">
             </div>
 
-            <div class="relative z-10 flex justify-between items-start">
-                <div class="w-2/3">
-                    <p class="text-cyan-400 font-bold tracking-widest text-sm uppercase mb-2">外勞芭 AI 招喚工坊</p>
-                    <h1 class="text-4xl md:text-5xl font-black mb-3 leading-tight">
-                        Webber Hsu
-                        <span class="block text-2xl font-medium text-slate-300 mt-1">AI 自動化增長顧問</span>
+
+            <div class="px-8 md:px-20 lg:px-32 relative z-10 w-full mt-20">
+                <div class="max-w-4xl">
+                    <h2
+                        class="text-brand-accent font-bold tracking-[0.15em] text-sm md:text-base uppercase mb-6 border-l-2 border-brand-accent pl-4">
+                        外勞芭 AI 招喚工坊</h2>
+                    <h1
+                        class="text-6xl md:text-8xl lg:text-[7rem] font-display font-bold mb-4 leading-[0.9] tracking-tight">
+                        WEBBER <span class="text-zinc-600">HSU</span>
                     </h1>
-                    <p class="text-xl text-slate-300 font-light mt-4 border-l-4 border-cyan-500 pl-4">
-                        從數據到自動化，<br>為你的企業裝上 <strong class="text-white">AI 引擎</strong>。
+                    <p class="text-2xl md:text-3xl font-light text-zinc-300 mt-2 mb-10 tracking-wide">
+                        AI 效率升級顧問
                     </p>
-                </div>
-                <!-- Real QR Code for Line Contact -->
-                <div class="w-1/3 flex flex-col items-end text-right">
-                    <a href="https://line.me/ti/p/~tokpmpm" target="_blank"
-                        class="bg-white p-2 rounded-lg mb-2 w-28 h-28 flex items-center justify-center shadow-lg hover:scale-105 transition-transform cursor-pointer overflow-hidden">
-                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://line.me/ti/p/~tokpmpm"
-                            alt="Line: tokpmpm" class="w-full h-full object-contain">
-                    </a>
-                    <p class="text-xs text-slate-400">掃描或點擊加入 Line</p>
-                    <p class="text-xs font-mono text-cyan-400 font-bold mt-1">ID: tokpmpm</p>
+
+                    <div class="border-y border-zinc-800 py-8 my-8 max-w-2xl">
+                        <p class="text-xl md:text-2xl text-zinc-100 font-light leading-snug">
+                            一人當十人用太累？<br>
+                            讓 AI 成為您 24 小時不休息的<strong class="font-bold text-brand-accent">數位員工</strong>。
+                        </p>
+                    </div>
+
+                    <div
+                        class="mt-8 relative z-20 flex flex-col sm:flex-row items-start sm:items-center gap-6 no-print">
+                        <a href="#assessment-form"
+                            class="inline-flex items-center gap-3 bg-brand-accent hover:bg-white text-brand-dark font-display font-bold uppercase tracking-wider py-4 px-8 transition-all duration-300 glitch-hover">
+                            <i data-lucide="activity" class="w-5 h-5"></i>
+                            領取免費健檢 (3 Min)
+                        </a>
+                        <p class="text-sm text-zinc-400 font-medium font-mono">
+                            <span class="text-brand-accent">✓</span> 零程式基礎要求<br>
+                            <span class="text-brand-accent">✓</span> 無縫接軌現有工具
+                        </p>
+                    </div>
                 </div>
             </div>
 
-            <!-- Trust Badges (Experience Highlights) -->
-            <div class="mt-8 flex flex-wrap gap-4 text-sm">
-                <span class="bg-slate-800 border border-slate-700 px-3 py-1 rounded-full flex items-center gap-2">
-                    <i data-lucide="briefcase" class="w-4 h-4 text-cyan-400"></i> 14年跨國產品經理經驗
-                </span>
-                <span class="bg-slate-800 border border-slate-700 px-3 py-1 rounded-full flex items-center gap-2">
-                    <i data-lucide="trending-up" class="w-4 h-4 text-cyan-400"></i> 曾協助營收 171% 年增長
-                </span>
-                <span class="bg-slate-800 border border-slate-700 px-3 py-1 rounded-full flex items-center gap-2">
-                    <i data-lucide="award" class="w-4 h-4 text-cyan-400"></i> 史丹佛機器學習認證
-                </span>
+            <!-- Trust Badges: Minimalist style -->
+            <div
+                class="absolute bottom-0 right-0 hidden lg:flex bg-zinc-900 border-t border-l border-zinc-800 p-6 gap-8">
+                <div>
+                    <p class="text-xs text-zinc-500 font-display tracking-widest uppercase mb-1">Experience</p>
+                    <p class="text-sm font-bold text-zinc-200">14年跨國產品經理</p>
+                </div>
+                <div>
+                    <p class="text-xs text-zinc-500 font-display tracking-widest uppercase mb-1">Impact</p>
+                    <p class="text-sm font-bold text-zinc-200">曾協助營收 171% 年增長</p>
+                </div>
+                <div>
+                    <p class="text-xs text-zinc-500 font-display tracking-widest uppercase mb-1">Certification</p>
+                    <p class="text-sm font-bold text-zinc-200">Stanford ML Certification</p>
+                </div>
             </div>
         </header>
 
-        <!-- Main Content -->
-        <main class="flex-grow bg-white px-10 py-8">
+        <main class="flex-grow">
 
-            <!-- Value Proposition -->
-            <section class="mb-10">
-                <h3 class="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-2">
-                    <span class="bg-cyan-100 p-1 rounded"><i data-lucide="zap" class="w-6 h-6 text-cyan-600"></i></span>
-                    核心服務：專為一人公司設計的「省時」系統
-                </h3>
+            <!-- 2. PAIN POINTS: Editorial Layout -->
+            <section class="py-20 px-8 md:px-20 lg:px-32 bg-brand-light border-grid-b">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
 
-                <div class="grid grid-cols-2 gap-6">
-                    <!-- Service 1: AI 官方網頁建置 -->
-                    <div class="bg-slate-50 p-5 rounded-xl border border-slate-100 hover:shadow-md transition-shadow">
-                        <div class="w-10 h-10 bg-rose-100 rounded-lg flex items-center justify-center mb-3">
-                            <i data-lucide="globe" class="w-6 h-6 text-rose-600"></i>
-                        </div>
-                        <h4 class="font-bold text-lg mb-2">AI 官方網頁建置</h4>
-                        <p class="text-sm text-slate-600 leading-relaxed">
-                            透過 AI 技術，<strong class="text-rose-600">10 倍速</strong>打造專業官方網站。省去傳統開發週期，快速上線、即時迭代。
+                    <div class="lg:col-span-4">
+                        <h3 class="text-3xl md:text-4xl font-display font-bold leading-tight mb-4">
+                            老闆，您是否每天在這些瑣事裡打轉？
+                        </h3>
+                        <div class="w-12 h-1 bg-brand-dark mb-6"></div>
+                        <p class="text-zinc-600">
+                            時間是您最昂貴的資本。<br>如果以下全中，您需要的不是加班，而是一套<strong
+                                class="text-brand-dark font-bold">數位工作流系統</strong>。
                         </p>
                     </div>
 
-                    <!-- Service 2: AI 智能爬蟲 -->
-                    <div class="bg-slate-50 p-5 rounded-xl border border-slate-100 hover:shadow-md transition-shadow">
-                        <div class="w-10 h-10 bg-teal-100 rounded-lg flex items-center justify-center mb-3">
-                            <i data-lucide="bug" class="w-6 h-6 text-teal-600"></i>
+                    <div class="lg:col-span-8 grid md:grid-cols-2 gap-x-8 gap-y-12">
+                        <!-- Point 1 -->
+                        <div class="group">
+                            <div class="flex items-center gap-4 mb-3">
+                                <span
+                                    class="font-display text-4xl font-bold text-zinc-300 group-hover:text-brand-accent transition-colors">01</span>
+                                <h4 class="font-bold text-xl text-brand-dark">手動作業無底洞</h4>
+                            </div>
+                            <p class="text-zinc-600 leading-relaxed border-l border-zinc-300 pl-4 py-1">
+                                天天手動複製貼上、對帳、登打印單，眼睛痛還容易出錯漏單。</p>
                         </div>
-                        <h4 class="font-bold text-lg mb-2">AI 智能爬蟲</h4>
-                        <p class="text-sm text-slate-600 leading-relaxed">
-                            模擬真人行為，智能繞過驗證機制，數據抓取極致穩定。
+
+                        <!-- Point 2 -->
+                        <div class="group">
+                            <div class="flex items-center gap-4 mb-3">
+                                <span
+                                    class="font-display text-4xl font-bold text-zinc-300 group-hover:text-brand-accent transition-colors">02</span>
+                                <h4 class="font-bold text-xl text-brand-dark">淪為客服小編</h4>
+                            </div>
+                            <p class="text-zinc-600 leading-relaxed border-l border-zinc-300 pl-4 py-1">
+                                半夜還要親自回覆客人相同的問題，根本沒有下班時間與生活品質。</p>
+                        </div>
+
+                        <!-- Point 3 -->
+                        <div class="group mt-auto md:col-span-2">
+                            <div class="flex items-center gap-4 mb-3">
+                                <span
+                                    class="font-display text-4xl font-bold text-zinc-300 group-hover:text-brand-accent transition-colors">03</span>
+                                <h4 class="font-bold text-xl text-brand-dark">沒時間專注核心</h4>
+                            </div>
+                            <p class="text-zinc-600 leading-relaxed border-l border-zinc-300 pl-4 py-1 max-w-xl">行政雜事佔據了
+                                80% 的工作天，完全沒空想策略、找資源、開發新客戶。</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. SERVICES: Industrial Grid -->
+            <section class="py-20 px-8 md:px-20 lg:px-32 border-grid-b">
+                <div class="mb-16">
+                    <h3 class="font-display text-xs tracking-[0.2em] text-zinc-500 uppercase mb-2">Core Systems</h3>
+                    <h2 class="text-4xl font-bold font-display uppercase">專為一人公司設計的系統</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-0 gap-y-0 border-t border-l border-zinc-200">
+
+                    <!-- Service Block Structure -->
+                    <div
+                        class="p-8 border-b border-r border-zinc-200 hover:bg-zinc-50 transition-colors group relative">
+                        <i data-lucide="globe"
+                            class="w-8 h-8 text-brand-dark mb-6 group-hover:text-brand-accentDim transition-colors"></i>
+                        <h4 class="font-display lg:text-2xl font-bold text-xl mb-3 tracking-wide">24H 品牌展示間</h4>
+                        <p class="text-sm text-zinc-600 leading-relaxed mb-4">
+                            不需要等外包排單。透過 AI，我們以 10 倍速為您打造具備高度轉換力的官方網站，讓客戶第一眼就信任您。
                         </p>
-                        <a href="https://rent.meshthings.com/" target="_blank"
-                            class="inline-flex items-center gap-1 text-xs text-teal-600 hover:underline mt-2">
-                            <i data-lucide="external-link" class="w-3 h-3"></i> 案例：租客資訊
-                        </a>
+                        <span
+                            class="text-xs font-bold text-brand-dark bg-zinc-100 px-2 py-1 uppercase tracking-wider">極速上線</span>
                     </div>
 
-                    <!-- Service 3: AI 智慧自動對帳 -->
-                    <div class="bg-slate-50 p-5 rounded-xl border border-slate-100 hover:shadow-md transition-shadow">
-                        <div class="w-10 h-10 bg-amber-100 rounded-lg flex items-center justify-center mb-3">
-                            <i data-lucide="calculator" class="w-6 h-6 text-amber-600"></i>
-                        </div>
-                        <h4 class="font-bold text-lg mb-2">AI 智慧自動對帳</h4>
-                        <p class="text-sm text-slate-600 leading-relaxed">
-                            秒速比對龐大帳目，告別人工眼花，優雅從容完成工作。
+                    <div
+                        class="p-8 border-b border-r border-zinc-200 hover:bg-zinc-50 transition-colors group relative">
+                        <i data-lucide="message-circle"
+                            class="w-8 h-8 text-brand-dark mb-6 group-hover:text-brand-accentDim transition-colors"></i>
+                        <h4 class="font-display lg:text-2xl font-bold text-xl mb-3 tracking-wide">超級客服神器</h4>
+                        <p class="text-sm text-zinc-600 leading-relaxed mb-4">
+                            建置智能機器人。自動處理客人常見提問、預約排程與初步導購，讓您專注在最高單價的閉單環節。
                         </p>
+                        <span
+                            class="text-xs font-bold text-brand-dark bg-zinc-100 px-2 py-1 uppercase tracking-wider">業務接單全自動</span>
                     </div>
 
-                    <!-- Service 4: 智能客服機器人 -->
-                    <div class="bg-slate-50 p-5 rounded-xl border border-slate-100 hover:shadow-md transition-shadow">
-                        <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center mb-3">
-                            <i data-lucide="message-circle" class="w-6 h-6 text-green-600"></i>
-                        </div>
-                        <h4 class="font-bold text-lg mb-2">智能客服機器人</h4>
-                        <p class="text-sm text-slate-600 leading-relaxed">
-                            建置 Line/Telegram 官方帳號機器人。不僅是自動回覆，更能處理預約、查詢與初步交易導購。
+                    <div
+                        class="p-8 border-b border-r border-zinc-200 hover:bg-zinc-50 transition-colors group relative">
+                        <i data-lucide="workflow"
+                            class="w-8 h-8 text-brand-dark mb-6 group-hover:text-brand-accentDim transition-colors"></i>
+                        <h4 class="font-display lg:text-2xl font-bold text-xl mb-3 tracking-wide">跨系統串接</h4>
+                        <p class="text-sm text-zinc-600 leading-relaxed mb-4">
+                            打通營運任督二脈。表單一進來，報價與歸檔自動跑完，形同僱用了一位不犯錯的高階助理。
                         </p>
+                        <span
+                            class="text-xs font-bold text-brand-dark bg-zinc-100 px-2 py-1 uppercase tracking-wider">自動化工作流</span>
                     </div>
 
-                    <!-- Service 5: GenAI 驅動的自動化內容平台 -->
-                    <div class="bg-slate-50 p-5 rounded-xl border border-slate-100 hover:shadow-md transition-shadow">
-                        <div class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center mb-3">
-                            <i data-lucide="send" class="w-6 h-6 text-purple-600"></i>
-                        </div>
-                        <h4 class="font-bold text-lg mb-2">GenAI 驅動的自動化內容平台</h4>
-                        <p class="text-sm text-slate-600 leading-relaxed">
-                            整合 LLM 自動解經與 Web Push，實現零人工維護的訂閱服務。
+                    <div
+                        class="p-8 border-b border-r border-zinc-200 hover:bg-zinc-50 transition-colors group relative">
+                        <i data-lucide="calculator"
+                            class="w-8 h-8 text-brand-dark mb-6 group-hover:text-brand-accentDim transition-colors"></i>
+                        <h4 class="font-display lg:text-2xl font-bold text-xl mb-3 tracking-wide">智能對帳管家</h4>
+                        <p class="text-sm text-zinc-600 leading-relaxed mb-4">
+                            秒速比對龐雜的銀行流水與訂單，告別手忙腳亂的人工核對，讓結帳錯誤率降至零。
                         </p>
-                        <a href="https://tokpmpm.github.io/daily-bible-bot/" target="_blank"
-                            class="inline-flex items-center gap-1 text-xs text-purple-600 hover:underline mt-2">
-                            <i data-lucide="external-link" class="w-3 h-3"></i> 案例：AI 語音靈修與訂閱服務
-                        </a>
+                        <span
+                            class="text-xs font-bold text-brand-dark bg-zinc-100 px-2 py-1 uppercase tracking-wider">精準核算</span>
                     </div>
 
-                    <!-- Service 6: 數據可視化分析 -->
-                    <div class="bg-slate-50 p-5 rounded-xl border border-slate-100 hover:shadow-md transition-shadow">
-                        <div class="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center mb-3">
-                            <i data-lucide="bar-chart-2" class="w-6 h-6 text-orange-600"></i>
-                        </div>
-                        <h4 class="font-bold text-lg mb-2">數據可視化分析</h4>
-                        <p class="text-sm text-slate-600 leading-relaxed">
-                            拒絕憑感覺經營。建立客製化儀表板 (Dashboard)，讓關鍵數據直接引導您的下一次商業決策。
+                    <div
+                        class="p-8 border-b border-r border-zinc-200 hover:bg-zinc-50 transition-colors group relative">
+                        <i data-lucide="pie-chart"
+                            class="w-8 h-8 text-brand-dark mb-6 group-hover:text-brand-accentDim transition-colors"></i>
+                        <h4 class="font-display lg:text-2xl font-bold text-xl mb-3 tracking-wide">老闆專屬黑盒子</h4>
+                        <p class="text-sm text-zinc-600 leading-relaxed mb-6">
+                            把關鍵業績指標變成直覺圖表，直接在手機掌握公司營運命脈。拒絕盲測，用數據決策。
                         </p>
                         <a href="https://flightdata2.meshthings.com/" target="_blank"
-                            class="inline-flex items-center gap-1 text-xs text-orange-600 hover:underline mt-2">
-                            <i data-lucide="external-link" class="w-3 h-3"></i> 案例：台灣航空載客率儀表板
+                            class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest border-b border-brand-dark pb-1 hover:text-brand-accentDim hover:border-brand-accentDim transition-colors">
+                            View Case <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
                         </a>
                     </div>
 
-                    <!-- Service 7: AI 影片錄製 -->
-                    <div class="bg-slate-50 p-5 rounded-xl border border-slate-100 hover:shadow-md transition-shadow">
-                        <div class="w-10 h-10 bg-pink-100 rounded-lg flex items-center justify-center mb-3">
-                            <i data-lucide="video" class="w-6 h-6 text-pink-600"></i>
-                        </div>
-                        <h4 class="font-bold text-lg mb-2">AI 影片錄製</h4>
-                        <p class="text-sm text-slate-600 leading-relaxed">
-                            用<strong class="text-pink-600">少量成本</strong>製作高品質影片。不需演員、不需道具，AI 幫你搞定一切，快速修改。
+                    <div
+                        class="p-8 border-b border-r border-zinc-200 hover:bg-zinc-50 transition-colors group relative">
+                        <i data-lucide="search"
+                            class="w-8 h-8 text-brand-dark mb-6 group-hover:text-brand-accentDim transition-colors"></i>
+                        <h4 class="font-display lg:text-2xl font-bold text-xl mb-3 tracking-wide">情報分析儀</h4>
+                        <p class="text-sm text-zinc-600 leading-relaxed mb-6">
+                            全天候自動上網蒐集潛在客戶名單或競品動態。一早醒來，情報已經整理在您的桌上。
                         </p>
-                    </div>
-
-                    <!-- Service 8: AI 自動化工作流 -->
-                    <div class="bg-slate-50 p-5 rounded-xl border border-slate-100 hover:shadow-md transition-shadow">
-                        <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mb-3">
-                            <i data-lucide="workflow" class="w-6 h-6 text-blue-600"></i>
-                        </div>
-                        <h4 class="font-bold text-lg mb-2">AI 自動化工作流</h4>
-                        <p class="text-sm text-slate-600 leading-relaxed">
-                            運用 n8n 與 Zapier 串接您的工具箱。讓報價單自動生成、客戶資料自動歸檔，告別重複性瑣事。
-                        </p>
+                        <a href="https://rent.meshthings.com/" target="_blank"
+                            class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest border-b border-brand-dark pb-1 hover:text-brand-accentDim hover:border-brand-accentDim transition-colors">
+                            View Case <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
+                        </a>
                     </div>
                 </div>
             </section>
 
-            <!-- Customer Testimonial -->
-            <section class="mb-8 bg-gradient-to-r from-cyan-50 to-blue-50 p-6 rounded-xl border border-cyan-100">
-	                <h3 class="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
-	                    <i data-lucide="message-square-quote" class="w-5 h-5 text-cyan-600"></i>
-	                    客人好評
-	                </h3>
-	                <div class="space-y-4">
-	                    <div class="flex items-start gap-4">
-	                        <img src="./images/twarovia-icon.svg" alt="小香氣味學（Twarovia）"
-	                            class="w-12 h-12 rounded-full object-cover flex-shrink-0 border-2 border-cyan-200 bg-slate-900">
-	                        <div>
-	                            <p class="text-slate-700 italic mb-2">
-	                                "特別感謝 Webber Hsu。如果沒有他，我到現在都還迷路在 Wix 後台中。他不僅提供專業的技術支援，更幫我打造了一個專業、易用的官方網站平台。"
-	                            </p>
-	                            <p class="text-sm font-bold text-cyan-700">— <a href="https://twarovia.com/" target="_blank"
-	                                    class="hover:underline">小香氣味學（Twarovia）</a></p>
-	                        </div>
-	                    </div>
-	                    <div class="flex items-start gap-4">
-	                        <img src="https://goldheartconnect.com/amy.jpg" alt="大女孩愛咪"
-	                            class="w-12 h-12 rounded-full object-cover flex-shrink-0 border-2 border-cyan-200">
-	                        <div>
-	                            <p class="text-slate-700 italic mb-2">"一小時幫我解決了卡關三個月的網站"</p>
-	                            <p class="text-sm font-bold text-cyan-700">— <a href="https://goldheartconnect.com/"
-	                                    target="_blank" class="hover:underline">大女孩愛咪</a></p>
-	                        </div>
-	                    </div>
-                    <div class="flex items-start gap-4">
-                        <img src="https://ching-home.com/images/ching-home.com/property_images/logo/21f001d5a299c4c6e1b82b0cc34dfcdd23f84e6d.png?1723630850"
-                            alt="青寓"
-                            class="w-12 h-12 rounded-full object-cover flex-shrink-0 border-2 border-cyan-200 bg-white">
-                        <div>
-                            <p class="text-slate-700 italic mb-2">"AI 分析讓資訊一目了然，工時從三小時縮到五分鐘，真心推薦給忙碌房東。"</p>
-                            <p class="text-sm font-bold text-cyan-700">— <a href="https://ching-home.com/"
-                                    target="_blank" class="hover:underline">青寓</a></p>
+            <!-- 4. TESTIMONIALS & CASES -->
+            <section class="py-20 px-8 md:px-20 lg:px-32 bg-zinc-900 text-white border-grid-b">
+                <div class="grid lg:grid-cols-2 gap-16">
+
+                    <!-- Testimonials -->
+                    <div>
+                        <h3
+                            class="font-display text-xs tracking-[0.2em] text-zinc-500 uppercase mb-8 border-b border-zinc-800 pb-4">
+                            Client Verification</h3>
+                        <div class="space-y-10">
+                            <!-- Review 1 -->
+                            <div class="relative">
+                                <i data-lucide="quote" class="absolute -top-3 -left-4 w-8 h-8 text-zinc-800"></i>
+                                <div class="pl-6 border-l-2 border-brand-accent">
+                                    <p class="text-lg font-light leading-relaxed mb-4">
+                                        特別感謝 Webber Hsu。如果沒有他，我到現在都還迷路在 Wix 後台中。他不僅提供專業的技術支援，更幫我打造了一個專業、易用的官方網站平台。
+                                    </p>
+                                    <div class="flex items-center gap-3">
+                                        <img src="./images/twarovia-icon-new.png" alt="Twarovia"
+                                            class="w-8 h-8 bg-white object-cover">
+                                        <span
+                                            class="text-sm font-bold uppercase tracking-wider text-zinc-400">小香氣味學</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Review 2 -->
+                            <div class="relative">
+                                <i data-lucide="quote" class="absolute -top-3 -left-4 w-8 h-8 text-zinc-800"></i>
+                                <div class="pl-6 border-l-2 border-brand-accent">
+                                    <p class="text-lg font-light leading-relaxed mb-4">
+                                        AI 分析讓資訊一目了然，工時從三小時縮到五分鐘，真心推薦給忙碌房東。
+                                    </p>
+                                    <div class="flex items-center gap-3">
+                                        <div
+                                            class="w-8 h-8 bg-white font-bold text-brand-dark flex items-center justify-center text-xs">
+                                            青</div>
+                                        <span class="text-sm font-bold uppercase tracking-wider text-zinc-400">青寓</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Review 3 -->
+                            <div class="relative">
+                                <i data-lucide="quote" class="absolute -top-3 -left-4 w-8 h-8 text-zinc-800"></i>
+                                <div class="pl-6 border-l-2 border-brand-accent">
+                                    <p class="text-lg font-light leading-relaxed mb-4">
+                                        Webber理解力高，合作內容產出高效，整體合作相當愉快、順暢！
+                                    </p>
+                                    <div class="flex items-center gap-3">
+                                        <img src="./images/carey.jpg" alt="Carey"
+                                            class="w-8 h-8 object-cover grayscale">
+                                        <span class="text-sm font-bold uppercase tracking-wider text-zinc-400">軟體服務行銷總監
+                                            Carey</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="flex items-start gap-4">
-                        <img src="./images/carey.jpg" alt="Carey"
-                            class="w-12 h-12 rounded-full object-cover flex-shrink-0 border-2 border-cyan-200 object-top">
-                        <div>
-                            <p class="text-slate-700 italic mb-2">"Webber理解力高，合作內容產出高效，整體合作相當愉快、順暢！"</p>
-                            <p class="text-sm font-bold text-cyan-700">— 軟體服務行銷總監 Carey</p>
+
+                    <!-- Cases -->
+                    <div>
+                        <h3
+                            class="font-display text-xs tracking-[0.2em] text-zinc-500 uppercase mb-8 border-b border-zinc-800 pb-4">
+                            Deployed Solutions</h3>
+                        <div class="space-y-6">
+                            <a href="https://twarovia.com/" target="_blank" class="block group">
+                                <div
+                                    class="border border-zinc-800 p-6 hover:border-brand-accent transition-colors bg-zinc-950">
+                                    <div class="flex justify-between items-start mb-2">
+                                        <h5
+                                            class="font-bold text-lg font-display tracking-wide group-hover:text-brand-accent transition-colors">
+                                            小香氣味學官方網站</h5>
+                                        <i data-lucide="arrow-up-right"
+                                            class="w-4 h-4 text-zinc-500 group-hover:text-brand-accent"></i>
+                                    </div>
+                                    <p class="text-sm text-zinc-400">協助品牌從 Wix 後台迷宮中解套，打造更專業、好維護的平台。</p>
+                                </div>
+                            </a>
+                            <a href="https://blog.meshthings.com/2025/12/how-to-build-website-with-gemini-canvas-prompt.html"
+                                target="_blank" class="block group">
+                                <div
+                                    class="border border-zinc-800 p-6 hover:border-brand-accent transition-colors bg-zinc-950">
+                                    <div class="flex justify-between items-start mb-2">
+                                        <h5
+                                            class="font-bold text-lg font-display tracking-wide group-hover:text-brand-accent transition-colors">
+                                            10分鐘急速架站方案</h5>
+                                        <i data-lucide="arrow-up-right"
+                                            class="w-4 h-4 text-zinc-500 group-hover:text-brand-accent"></i>
+                                    </div>
+                                    <p class="text-sm text-zinc-400">AI 技術大幅降低外包成本，極速生成高品質品牌官網。</p>
+                                </div>
+                            </a>
+
+                            <a href="https://blog.meshthings.com/2025/09/ai-telegram-stock-bot-experience.html"
+                                target="_blank" class="block group">
+                                <div
+                                    class="border border-zinc-800 p-6 hover:border-brand-accent transition-colors bg-zinc-950">
+                                    <div class="flex justify-between items-start mb-2">
+                                        <h5
+                                            class="font-bold text-lg font-display tracking-wide group-hover:text-brand-accent transition-colors">
+                                            Telegram 股市分析引擎</h5>
+                                        <i data-lucide="arrow-up-right"
+                                            class="w-4 h-4 text-zinc-500 group-hover:text-brand-accent"></i>
+                                    </div>
+                                    <p class="text-sm text-zinc-400">整合即時數據抓取與技術指標分析，手機端即時獲取信號。</p>
+                                </div>
+                            </a>
                         </div>
                     </div>
+
                 </div>
             </section>
 
-            <hr class="border-slate-200 mb-8">
-
-            <!-- Real World Cases -->
-            <section class="mb-8">
-	                <h3 class="text-xl font-bold text-slate-900 mb-5">
-	                    實戰案例：落地、快速、有效
-	                </h3>
-	                <div class="space-y-4">
-	                    <div class="flex items-start gap-4">
-	                        <div
-	                            class="w-16 h-16 bg-slate-900 rounded-md flex-shrink-0 overflow-hidden flex items-center justify-center border border-slate-200">
-	                            <img src="./images/twarovia-icon.svg" alt="小香氣味學（Twarovia）" class="w-10 h-10">
-	                        </div>
-	                        <div>
-	                            <h5 class="font-bold text-slate-800">
-	                                <a href="https://twarovia.com/" target="_blank"
-	                                    class="hover:text-blue-600 inline-flex items-center gap-1 transition-colors">
-	                                    小香氣味學（Twarovia）官方網站平台
-	                                    <i data-lucide="external-link" class="w-4 h-4 text-slate-400"></i>
-	                                </a>
-	                            </h5>
-	                            <p class="text-sm text-slate-600 mt-1">協助品牌從 Wix 後台迷宮中解套，打造更專業、易用、好維護的官網平台。</p>
-	                        </div>
-	                    </div>
-	                    <div class="flex items-start gap-4">
-	                        <div
-	                            class="w-16 h-16 bg-slate-200 rounded-md flex-shrink-0 overflow-hidden flex items-center justify-center">
-	                            <span class="text-xs font-bold text-slate-400">Website</span>
-	                        </div>
-	                        <div>
-	                            <h5 class="font-bold text-slate-800">
-	                                <a href="https://blog.meshthings.com/2025/12/how-to-build-website-with-gemini-canvas-prompt.html"
-	                                    target="_blank"
-	                                    class="hover:text-blue-600 inline-flex items-center gap-1 transition-colors">
-	                                    10分鐘急速架站方案 (Gemini Canvas)
-	                                    <i data-lucide="external-link" class="w-4 h-4 text-slate-400"></i>
-	                                </a>
-	                            </h5>
-	                            <p class="text-sm text-slate-600 mt-1">協助品牌客戶透過 AI 技術，大幅降低外包成本，極速生成高品質、具備品牌識別度的官方網站。</p>
-	                        </div>
-	                    </div>
-                    <div class="flex items-start gap-4">
+            <!-- 5. CALL TO ACTION (Form) -->
+            <section id="assessment-form"
+                class="py-20 px-8 md:px-20 lg:px-32 bg-brand-dark text-white border-t-[12px] border-brand-accent no-print scroll-mt-0">
+                <div class="max-w-4xl mx-auto">
+                    <div class="mb-10 text-center md:text-left">
                         <div
-                            class="w-16 h-16 bg-slate-200 rounded-md flex-shrink-0 overflow-hidden flex items-center justify-center">
-                            <span class="text-xs font-bold text-slate-400">StockBot</span>
+                            class="inline-block bg-brand-accent text-brand-dark font-display font-bold uppercase tracking-widest text-xs px-3 py-1 mb-6">
+                            Step 01 / Diagnostics
                         </div>
-                        <div>
-                            <h5 class="font-bold text-slate-800">
-                                <a href="https://blog.meshthings.com/2025/09/ai-telegram-stock-bot-experience.html"
-                                    target="_blank"
-                                    class="hover:text-blue-600 inline-flex items-center gap-1 transition-colors">
-                                    Telegram 股市分析機器人
-                                    <i data-lucide="external-link" class="w-4 h-4 text-slate-400"></i>
-                                </a>
-                            </h5>
-                            <p class="text-sm text-slate-600 mt-1">整合即時數據抓取與技術指標分析，讓投資人能在手機端即時獲取關鍵市場信號。</p>
+                        <h2 class="text-3xl md:text-5xl font-display font-bold mb-6">預約 30 分鐘自動化健檢</h2>
+                        <p class="text-zinc-400 text-lg leading-relaxed max-w-2xl">
+                            您的時間是公司最昂貴的資產。為了確保諮詢效率，請花 3 分鐘填寫評估單。若合適，我們將在會議中直接討論<strong class="text-white">「每週為您省下 5-10
+                                小時」</strong>的具體解方。
+                        </p>
+                    </div>
+
+                    <!-- Hardware Bezel Container for Form -->
+                    <div class="bg-white p-2 md:p-6 shadow-2xl relative">
+                        <div class="absolute top-2 left-2 w-2 h-2 rounded-full bg-red-500"></div>
+                        <div class="absolute top-2 left-5 w-2 h-2 rounded-full bg-yellow-500"></div>
+                        <div class="absolute top-2 left-8 w-2 h-2 rounded-full bg-green-500"></div>
+                        <div class="h-6 w-full bg-zinc-100 border-b border-zinc-200 mb-2"></div>
+
+                        <div class="w-full h-[800px] overflow-hidden bg-white">
+                            <iframe
+                                src="https://docs.google.com/forms/d/e/1FAIpQLSc12tP4dgEj66f03MV9JNsLtAnm_A0eObfHiQK-2kBsKxbBKg/viewform?embedded=true"
+                                width="100%" height="100%" frameborder="0" marginheight="0"
+                                marginwidth="0">載入中…</iframe>
                         </div>
                     </div>
                 </div>
             </section>
+
         </main>
 
-        <!-- Footer / "Back" Section -->
-        <footer class="bg-slate-100 px-10 py-8 mt-auto border-t border-slate-200">
-            <div class="flex flex-col md:flex-row gap-8">
-                <div class="flex-1">
-                    <h4 class="font-bold text-slate-900 mb-3 text-lg">為什麼選擇 Webber?</h4>
-                    <p class="text-sm text-slate-600 leading-relaxed mb-4 italic">
-                        「我不只提供程式碼，更提供商業增長策略。」
-                    </p>
-                    <p class="text-sm text-slate-600 leading-relaxed">
-                        擁有 D-Link 與 Gogolook 等跨國科技公司的歷練，我深知技術如何轉化為獲利。對於一人公司而言，我就是您的技術長 (CTO)
-                        與數據分析師。讓我幫您處理技術難題，您專注於您最擅長的業務。
+        <!-- FOOTER: Pragmatic Utility -->
+        <footer class="bg-brand-light border-t border-zinc-300 px-8 md:px-20 lg:px-32 py-16 mt-auto">
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h2 class="font-display font-bold text-2xl uppercase tracking-wide mb-4">為什麼選擇 Webber?</h2>
+                    <blockquote class="border-l-4 border-brand-dark pl-4 mb-6">
+                        <p class="font-serif italic text-lg text-zinc-700">「我不只提供程式碼，更提供商業增長策略。」</p>
+                    </blockquote>
+                    <p class="text-zinc-600 leading-relaxed text-sm max-w-md">
+                        擁有大型跨國科技公司的歷練，我深知技術如何轉化為獲利。對於一人公司而言，我是您的 CTO 與外包工程部。技術難題交給我，您負責接單數錢。
                     </p>
                 </div>
 
-                <div class="md:w-1/3 bg-white p-5 rounded-lg border border-slate-200 shadow-sm">
-                    <h4 class="font-bold text-slate-900 mb-4 border-b pb-2">聯絡方式</h4>
-                    <ul class="space-y-3 text-sm">
-                        <li class="flex items-center gap-3">
-                            <i data-lucide="mail" class="w-4 h-4 text-cyan-600"></i>
-                            <a href="mailto:tokpmpm@gmail.com" class="hover:text-cyan-600">tokpmpm@gmail.com</a>
-                        </li>
-
-                        <li class="flex items-center gap-3">
-                            <i data-lucide="message-circle" class="w-4 h-4 text-cyan-600"></i>
-                            <span>Line ID: tokpmpm</span>
-                        </li>
-
-                        <li class="mt-4 text-xs text-slate-400 text-center">
-                            掃描上方 QR Code 開始對話
-                        </li>
-                    </ul>
+                <div class="md:text-right flex flex-col md:items-end justify-center">
+                    <p class="font-display text-xs tracking-[0.2em] text-zinc-500 uppercase mb-4">Direct Contact</p>
+                    <a href="mailto:tokpmpm@gmail.com"
+                        class="text-xl font-bold hover:text-brand-accentDim transition-colors inline-block border-b-2 border-transparent hover:border-brand-accentDim">
+                        tokpmpm@gmail.com
+                    </a>
                 </div>
             </div>
 
-            <div class="text-center mt-8 text-xs text-slate-400">
-                &copy; 2026 外勞芭 AI 招喚工坊 | Webber Hsu. All Rights Reserved. Data-Driven & AI-Powered.
+            <div
+                class="mt-16 pt-8 border-t border-zinc-200 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-xs text-zinc-500 font-mono tracking-wider">
+                    &copy; 2026 WEBBER HSU. ALL ALGORITHMS RESERVED.
+                </p>
+                <div class="flex gap-2">
+                    <div class="w-1 h-4 bg-brand-dark"></div>
+                    <div class="w-1 h-4 bg-brand-accent"></div>
+                </div>
             </div>
         </footer>
     </div>
